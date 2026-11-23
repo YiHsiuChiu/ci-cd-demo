@@ -36,4 +36,6 @@ def send_confirmation_email(email, order):
     logger.error('{}, {}'.format(err.code().name, err.code().value))
 
 if __name__ == '__main__':
+  order = demo_pb2.OrderResult(order_id='TEST-001')
+  send_confirmation_email('test@example.com', order)
   logger.info('Client for email service.')
